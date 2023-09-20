@@ -4,27 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신청 폼</title>
+    <title>2023년 10월 학교프로젝트 쿠폰 신청 페이지</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .coupon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .coupon-box {
             width: 60px;
+            margin: 5px;
         }
 
         .coupon-small {
             width: 20px;
+            margin: 5px;
+        }
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
-    <div>
+    <div class="coupon-container">
         <img src="https://www.itall.com/img/suneung/event/school/sp_main_tit_230726.png">
         <img src="https://www.itall.com/img/suneung/event/school/sp_main_school.png">
-        <input type="text" class="coupon-box" maxlength="6" id="part1" onkeyup="moveFocus(6, 'part2')">
-        <input type="text" class="coupon-small" maxlength="2" id="part2" onkeyup="moveFocus(2, 'part3')">
-        <input type="text" class="coupon-box" maxlength="6" id="part3" onkeyup="moveFocus(6, 'part4')">
-        <input type="text" class="coupon-small" maxlength="2" id="part4">
-        <button onclick="checkCoupon()">제출</button>    
+        <h1>2023년 10월 학교프로젝트 쿠폰으로 신청하기</h1>
+        <div>
+            <input type="text" class="coupon-box" maxlength="6" id="part1" onkeyup="moveFocus(6, 'part2')">
+            <input type="text" class="coupon-small" maxlength="2" id="part2" onkeyup="moveFocus(2, 'part3')">
+            <input type="text" class="coupon-box" maxlength="6" id="part3" onkeyup="moveFocus(6, 'part4')">
+            <input type="text" class="coupon-small" maxlength="2" id="part4">
+        </div>
+        <button onclick="checkCoupon()">제출</button>
     </div>
     <div id="applicationForm" style="display:none;">
         <!-- 신청 폼 내용 -->
