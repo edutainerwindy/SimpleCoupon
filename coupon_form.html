@@ -12,7 +12,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: 270vh;
             margin: 0;
         }
 
@@ -21,7 +21,7 @@
             flex-direction: column;
             align-items: center;
             padding-top: 40px; 
-            text-align: center;  /* 텍스트 가운데 정렬 */
+            text-align: center; 
         }
 
         .coupon-box {
@@ -35,7 +35,7 @@
         }
 
         img {
-            max-width: 90%;  /* 이미지의 최대 너비 제한 */
+            max-width: 90%; 
             margin-bottom: 20px;
         }
 
@@ -100,6 +100,7 @@
             // 쿠폰번호 검증 로직
             if (fullCode === "123456-78-123456-78") {
                 alert("쿠폰이 유효합니다!");
+                window.location.href = "https://forms.gle/8Dxebk6F7meY2R2r7";  // 유효한 경우 지정된 URL로 이동
             } else {
                 alert("쿠폰이 유효하지 않습니다.");
             }
