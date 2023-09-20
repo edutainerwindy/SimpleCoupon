@@ -4,14 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>신청 폼</title>
+    <style>
+        /* input 스타일을 조금 더 길게 조정 */
+        #couponCode {
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <div>
-        <input type="text" id="couponCode" placeholder="쿠폰 번호를 입력하세요">
+        <input type="text" id="couponCode" placeholder="쿠폰 번호를 입력하세요" maxlength="16" onkeyup="formatCouponCode()">
         <button onclick="checkCoupon()">제출</button>
     </div>
     <div id="applicationForm" style="display:none;">
         <!-- 신청 폼 내용 -->
     </div>
+    <script>
+        function formatCouponCode() {
+            let input = document.getElementById('couponCode');
+            let value = input.value.replace(/-/g, ''); // 먼저 모든 -를 제거
+            if (value.length > 6) {
+                value = value.substring(0, 6) + "-" + value.substring(6);
+            }
+            if (value.length > 9) {
+                value = value.substring(0, 9) + "-" + value.substring(9);
+            }
+            if (value.length > 16) {
+                value = value.substring(0, 16) + "-" + value.substring(16);
+            }
+            input.value = value;
+        }
+
+        function checkCoupon() {
+            // 쿠폰번호 검증 로직
+        }
+    </script>
 </body>
 </html>
