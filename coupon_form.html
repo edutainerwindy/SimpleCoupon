@@ -20,8 +20,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 20px;
-            width: 80%; /* 기본 너비 설정 */
+            padding-top: 20px;  /* 상단 패딩 추가 */
         }
 
         .coupon-box {
@@ -36,7 +35,7 @@
 
         img {
             margin-bottom: 20px;
-            max-width: 100%; /* 이미지의 최대 너비를 설정하여 화면 너비를 초과하지 않게 함 */
+            max-width: 100%; 
         }
 
         button {
@@ -48,10 +47,10 @@
             margin: 0 1px;
         }
 
-        /* 미디어 쿼리를 사용하여 화면 너비가 768px 미만일 때의 스타일을 정의 */
         @media (max-width: 768px) {
-            .coupon-container {
-                width: 95%; /* 모바일 장치에서의 너비 조정 */
+            h1 {
+                font-size: 18px; /* 모바일 화면에서의 폰트 사이즈 조정 */
+                line-height: 1.4; /* 줄 간격 조정 */
             }
         }
     </style>
@@ -60,7 +59,7 @@
 <body>
     <div class="coupon-container">
         <img src="https://www.itall.com/img/suneung/event/school/sp_main_tit_230726.png">
-        <h1>2023년 10월 학교프로젝트 쿠폰으로 신청하기</h1>
+        <h1>2023년 10월 학교프로젝트<br>쿠폰으로 신청하기</h1>
         <p>이번 학교 프로젝트를 위한 특별 쿠폰을 사용하여 신청해보세요! 쿠폰 번호를 입력하신 후 제출 버튼을 클릭하세요.</p>
         <div>
             <input type="text" class="coupon-box" maxlength="6" id="part1" onkeyup="moveFocus(6, 'part2')">
