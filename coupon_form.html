@@ -98,11 +98,14 @@
             const fullCode = part1 + "-" + part2 + "-" + part3 + "-" + part4;
 
             // 쿠폰번호 검증 로직
-            if (fullCode === "123456-78-123456-78") {
-                alert("쿠폰이 유효합니다!");
-                window.location.href = "https://forms.gle/8Dxebk6F7meY2R2r7";  // 유효한 경우 지정된 URL로 이동
+            if (fullCode === "SP2310-61-EPFUDQ-01" || 
+                fullCode === "SP2310-23-GLKUSG-02" || 
+                fullCode === "SP2310-95-NCYVKU-03" || 
+                fullCode === "SP2310-70-GANJYK-04") {
+                    alert("쿠폰이 유효합니다!");
+                    window.location.href = "https://forms.gle/8Dxebk6F7meY2R2r7";  // 유효한 경우 지정된 URL로 이동
             } else {
-                alert("쿠폰이 유효하지 않습니다.");
+                    alert("쿠폰이 유효하지 않습니다.");
             }
         }
     </script>
