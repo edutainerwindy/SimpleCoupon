@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>신청 폼</title>
     <style>
-        /* input 스타일을 조금 더 길게 조정 */
-        #couponCode {
-            width: 200px;
+        .coupon-box {
+            width: 60px;
+        }
+
+        .coupon-small {
+            width: 20px;
         }
     </style>
 </head>
+
 <body>
     <div>
-        <input type="text" id="couponCode" placeholder="쿠폰 번호를 입력하세요" maxlength="16" onkeyup="formatCouponCode()">
+        <input type="text" class="coupon-box" maxlength="6" id="part1" onkeyup="moveFocus(6, 'part2')">
+        <input type="text" class="coupon-small" maxlength="2" id="part2" onkeyup="moveFocus(2, 'part3')">
+        <input type="text" class="coupon-box" maxlength="6" id="part3" onkeyup="moveFocus(6, 'part4')">
+        <input type="text" class="coupon-small" maxlength="2" id="part4">
         <button onclick="checkCoupon()">제출</button>
     </div>
     <div id="applicationForm" style="display:none;">
         <!-- 신청 폼 내용 -->
     </div>
+
     <script>
-        function formatCouponCode() {
-            let input = document.getElementById('couponCode');
-            let value = input.value.replace(/-/g, ''); // 먼저 모든 -를 제거
-            if (value.length > 6) {
-                value = value.substring(0, 6) + "-" + value.substring(6);
+        function moveFocus(length, nextElementId) {
+            if (document.activeElement.value.length == length) {
+                document.getElementById(nextElementId).focus();
             }
-            if (value.length > 9) {
-                value = value.substring(0, 9) + "-" + value.substring(9);
-            }
-            if (value.length > 16) {
-                value = value.substring(0, 16) + "-" + value.substring(16);
-            }
-            input.value = value;
         }
 
         function checkCoupon() {
+            const part1 = document.getElementById('part1').value;
+            const part2 = document.getElementById('part2').value;
+            const part3 = document.getElementById('part3').value;
+            const part4 = document.getElementById('part4').value;
+            const fullCode = part1 + "-" + part2 + "-" + part3 + "-" + part4;
+            console.log(fullCode);
             // 쿠폰번호 검증 로직
         }
     </script>
 </body>
+
 </html>
