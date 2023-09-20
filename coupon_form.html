@@ -20,7 +20,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 40px;  /* 상단 패딩을 더 증가시켰습니다. */
+            padding-top: 40px; 
+            text-align: center;  /* 텍스트 가운데 정렬 */
         }
 
         .coupon-box {
@@ -34,12 +35,13 @@
         }
 
         img {
+            max-width: 90%;  /* 이미지의 최대 너비 제한 */
+            object-fit: contain;  /* 이미지가 잘리지 않게 설정 */
             margin-bottom: 20px;
-            max-width: 100%; 
         }
 
         h1 {
-            text-align: center;  /* 제목 가운데 정렬 */
+            text-align: center;
         }
 
         button {
@@ -95,8 +97,13 @@
             const part3 = document.getElementById('part3').value;
             const part4 = document.getElementById('part4').value;
             const fullCode = part1 + "-" + part2 + "-" + part3 + "-" + part4;
-            console.log(fullCode);
+
             // 쿠폰번호 검증 로직
+            if (fullCode === "123456-78-123456-78") {
+                alert("쿠폰이 유효합니다!");
+            } else {
+                alert("쿠폰이 유효하지 않습니다.");
+            }
         }
     </script>
 </body>
