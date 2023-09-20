@@ -20,6 +20,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding-top: 20px;
+            width: 80%; /* 기본 너비 설정 */
         }
 
         .coupon-box {
@@ -34,6 +36,7 @@
 
         img {
             margin-bottom: 20px;
+            max-width: 100%; /* 이미지의 최대 너비를 설정하여 화면 너비를 초과하지 않게 함 */
         }
 
         button {
@@ -43,6 +46,13 @@
         .coupon-separator {
             display: inline-block;
             margin: 0 1px;
+        }
+
+        /* 미디어 쿼리를 사용하여 화면 너비가 768px 미만일 때의 스타일을 정의 */
+        @media (max-width: 768px) {
+            .coupon-container {
+                width: 95%; /* 모바일 장치에서의 너비 조정 */
+            }
         }
     </style>
 </head>
