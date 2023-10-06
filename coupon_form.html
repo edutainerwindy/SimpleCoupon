@@ -78,7 +78,7 @@
             <span class="coupon-separator">-</span>
             <input type="text" class="coupon-small" maxlength="2" id="part4">
         </div>
-        <button onclick="checkCoupon()">인증하기</button>
+        <button onclick="checkCoupon()">마감</button>
         <img src="https://www.itall.com/img/suneung/event/school/sp_main_school.png">
     </div>
     <div id="applicationForm" style="display:none;">
@@ -111,10 +111,10 @@
                 fullCode === "SP2310-59-SEPEYT-09" || 
                 fullCode === "SP2310-31-LIGMZK-10") 
             {
-                    alert("인증되었습니다. 신청페이지로 이동합니다.");
-                    window.location.href = "https://forms.gle/8Dxebk6F7meY2R2r7";  // 유효한 경우 지정된 URL로 이동
+                    alert("신청기간이 마감되었습니다. 네이버로 이동합니다.");
+                    window.location.href = "https://www.naver.com";  // 유효한 경우 지정된 URL로 이동
             } else {
-                    alert("쿠폰이 유효하지 않습니다.");
+                    alert("신청기간이 마감되었습니다.");
             }
         }
     </script>
